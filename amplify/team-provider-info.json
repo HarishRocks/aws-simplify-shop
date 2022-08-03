@@ -10,6 +10,14 @@
       "StackName": "amplify-shop-dev-230606",
       "StackId": "arn:aws:cloudformation:us-east-1:099848091015:stack/amplify-shop-dev-230606/c3e31a80-1352-11ed-8db2-125cc65c9ea7",
       "AmplifyAppId": "d27nb26qrd89k0"
+    },
+    "categories": {
+      "function": {
+        "shop115186a6": {
+          "deploymentBucketName": "amplify-shop-dev-230606-deployment",
+          "s3Key": "amplify-builds/shop115186a6-6e6b764b453157666d75-build.zip"
+        }
+      }
     }
   }
 }

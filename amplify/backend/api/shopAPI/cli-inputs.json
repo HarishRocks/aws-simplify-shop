@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/shop": {
+      "name": "/shop",
+      "lambdaFunction": "shop115186a6",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
