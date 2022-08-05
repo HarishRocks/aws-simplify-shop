@@ -1,11 +1,8 @@
 {
-  "httpMethod": "POST",
-  "path": "/item",
-  "queryStringParameters": {
-    "limit": "10"
-  },
+  "httpMethod": "GET",
+  "path": "/shop/users",
   "headers": {
     "Content-Type": "application/json"
   },
-  "body": "{\"msg\":\"Hello from the event.json body\"}"
+  "body": "{\"email\":\"mohan@gmail.com\",\"name\":\"Mohan\"}"
 }
