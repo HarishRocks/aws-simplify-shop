@@ -3,6 +3,14 @@
     "shop": {
       "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
+    },
+    "dynamo0ae67a08": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
+    },
+    "dynamo4c89cd2b": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
     }
   },
   "function": {

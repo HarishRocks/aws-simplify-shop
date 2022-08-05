@@ -1,8 +1,11 @@
 {
   "httpMethod": "GET",
-  "path": "/shop/users",
+  "path": "/shop/orders",
   "headers": {
     "Content-Type": "application/json"
   },
-  "body": "{\"email\":\"mohan@gmail.com\",\"name\":\"Mohan\"}"
+  "queryStringParameters": {
+    "user": "arishh2@gmail.com"
+  },
+  "body": "{\"sum\":120,\"user\":\"mohan@gmail.com\",\"id\":\"bhuhy7\",\"items\":\"[{\\\"name\\\":\\\"Ice Cream\\\",\\\"price\\\":40,\\\"qty\\\":3}]\"}"
 }

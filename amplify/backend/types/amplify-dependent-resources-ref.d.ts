@@ -7,6 +7,22 @@ export type AmplifyDependentResourcesAttributes = {
             "PartitionKeyName": "string",
             "PartitionKeyType": "string",
             "Region": "string"
+        },
+        "dynamo0ae67a08": {
+            "Name": "string",
+            "Arn": "string",
+            "StreamArn": "string",
+            "PartitionKeyName": "string",
+            "PartitionKeyType": "string",
+            "Region": "string"
+        },
+        "dynamo4c89cd2b": {
+            "Name": "string",
+            "Arn": "string",
+            "StreamArn": "string",
+            "PartitionKeyName": "string",
+            "PartitionKeyType": "string",
+            "Region": "string"
         }
     },
     "function": {

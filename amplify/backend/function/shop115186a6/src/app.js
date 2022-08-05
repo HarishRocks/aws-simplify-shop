@@ -2,10 +2,9 @@ const AWS = require('aws-sdk')
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
 const bodyParser = require('body-parser')
 const express = require('express')
-const usersController = require('./controllers/user');
-const BaseDB = require('./models/base');
 
 const path = "/shop";
+const controllers = require('./controllers');
 
 // declare a new express app
 const app = express()
@@ -22,8 +21,15 @@ app.use(function (req, res, next) {
 app.get(path, function (req, res) {
   res.send("Welcome to the Shop");
 });
-app.get(path + '/users', usersController.getAll);
-app.post(path + '/user', usersController.addUser);
+
+
+app.get(path + '/users', controllers.users.getAll);
+app.post(path + '/user', controllers.users.addUser);
+
+app.get(path + '/items', controllers.items.getAll);
+
+app.get(path + '/orders', controllers.orders.getUserOrders);
+app.post(path + '/order', controllers.orders.placeOrder);
 
 app.listen(3000, function () {
   console.log("App started")

@@ -1,0 +1,10 @@
+{
+  "resourceName": "dynamo0ae67a08",
+  "tableName": "items",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
