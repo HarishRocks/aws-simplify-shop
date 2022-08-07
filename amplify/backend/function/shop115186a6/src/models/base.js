@@ -16,10 +16,16 @@ class BaseDB {
     }
     async getAll() {
         const data = BaseDB.dynamoDB.scan({
-            TableName: this.tableName
+            TableName: this.tableName,            
         })
 
         return (await data.promise()).Items;
+    }
+    async getByKey(key) {
+        return BaseDB.dynamoDB.get({
+            TableName: this.tableName,
+            Key: key
+        }).promise();
     }
     async insert(item) {
         const putItemParams = {

@@ -30,6 +30,7 @@ app.get(path + '/items', controllers.items.getAll);
 
 app.get(path + '/orders', controllers.orders.getUserOrders);
 app.post(path + '/order', controllers.orders.placeOrder);
+app.post(path + '/order/cancel', controllers.orders.cancelOrder);
 
 app.listen(3000, function () {
   console.log("App started")

@@ -15,7 +15,7 @@
       "function": {
         "shop115186a6": {
           "deploymentBucketName": "amplify-shop-dev-230606-deployment",
-          "s3Key": "amplify-builds/shop115186a6-3168514939706e6e2b72-build.zip"
+          "s3Key": "amplify-builds/shop115186a6-443967474252476e6342-build.zip"
         }
       }
     }
