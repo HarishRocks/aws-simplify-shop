@@ -1,11 +1,11 @@
 {
-  "httpMethod": "GET",
-  "path": "/shop/orders",
+  "httpMethod": "POST",
+  "path": "/shop/order/cancel",
   "headers": {
     "Content-Type": "application/json"
   },
   "queryStringParameters": {
     "user": "bazinga@gmail.com"
   },
-  "body": "{\"order\":\"bhuhy7\"}"
+  "body": "{\"order\":\"u1xbj6bv4yg\"}"
 }

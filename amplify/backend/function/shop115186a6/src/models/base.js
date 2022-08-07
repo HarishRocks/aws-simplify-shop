@@ -16,7 +16,7 @@ class BaseDB {
     }
     async getAll() {
         const data = BaseDB.dynamoDB.scan({
-            TableName: this.tableName,            
+            TableName: this.tableName,
         })
 
         return (await data.promise()).Items;
@@ -32,8 +32,7 @@ class BaseDB {
             TableName: this.tableName,
             Item: item
         }
-        const data = await BaseDB.dynamoDB.put(putItemParams).promise();
-        return data;
+        return BaseDB.dynamoDB.put(putItemParams).promise();
     }
 };
 

@@ -2,12 +2,8 @@ const dbs = require("../models");
 
 class ItemController {
     async getAll(req, res) {
-        try {
-            const items = await dbs.items.getAll();
-            res.json(items);
-        } catch (e) {
-            res.json(e);
-        }
+        const items = await dbs.items.getAll();
+        res.json({ empty: items?.length === 0, items });
     }
 }
 const itemsController = new ItemController();

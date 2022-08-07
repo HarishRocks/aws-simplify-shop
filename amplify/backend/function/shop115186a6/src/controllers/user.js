@@ -10,11 +10,8 @@ class UserController {
             email: req.body.email,
             name: req.body.name
         }
-        const done = dbs.users.insert(user);
-        if (done)
-            res.json(done);
-        else
-            res.send("error");
+        const resp = dbs.users.insert(user);
+        res.json({ success: !!resp });
     }
 }
 const usersController = new UserController();
