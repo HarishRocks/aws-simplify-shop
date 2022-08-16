@@ -9,8 +9,13 @@ class OrderController {
     async placeOrder(req, res) {
         const { items, user } = req.body;
         const itemsData = await dbs.items.batchGet(items);
-        const isSufficientInventory = items.every(item => {
-            return itemsData.get(item.id).quantity >= item.qty;
+        const isSufficientInventory = items.every(({ id, qty }) => {
+            const store = itemsData.get(id);
+            if (store.quantity >= qty) {
+                store.quantity = store.quantity - qty;
+                return true;
+            }
+            return false;
         });
         if (!isSufficientInventory) {
             res.json({ success: false, message: 'All items in this order are not available' });
@@ -25,8 +30,9 @@ class OrderController {
             sum,
             cancelled: false
         });
+        await dbs.items.updateInventory(itemsData);
+        console.log("Inventory updated successfully!");
         res.json({ success: !!resp, orderId });
-        // dbs.items.updateInventory(items);
     }
     async cancelOrder(req, res) {
         const { order } = req.body;
