@@ -5,7 +5,7 @@ class OrdersDB extends BaseDB {
         super("orders");
     }
     async getByUser(user, showCancelled = false) {
-        const params = {
+        const params1 = {
             TableName: super.getTableName(),
             ExpressionAttributeNames: {
                 '#user': 'user',
@@ -16,7 +16,16 @@ class OrdersDB extends BaseDB {
                 ':showCancelled': showCancelled
             }, FilterExpression: '#user = :userEmail AND #cancelled = :showCancelled'
         };
-        const data = await BaseDB.dynamoDB.scan(params).promise();
+        const params2 = {
+            TableName: super.getTableName(),
+            ExpressionAttributeNames: {
+                '#user': 'user'
+            }
+            , ExpressionAttributeValues: {
+                ':userEmail': user
+            }, FilterExpression: '#user = :userEmail'
+        }
+        const data = await BaseDB.dynamoDB.scan(showCancelled ? params2 : params1).promise();
         return data.Items;
     }
     async cancel(orderId) {

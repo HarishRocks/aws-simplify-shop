@@ -2,8 +2,8 @@ const dbs = require("../models");
 
 class OrderController {
     async getUserOrders(req, res) {
-        const { user } = req.query;
-        const orders = await dbs.orders.getByUser(user);
+        const { user, showCancelled } = req.query;
+        const orders = await dbs.orders.getByUser(user, showCancelled);
         res.json({ empty: orders?.length === 0, orders });
     }
     async placeOrder(req, res) {
