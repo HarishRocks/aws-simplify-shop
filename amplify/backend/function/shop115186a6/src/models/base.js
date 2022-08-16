@@ -21,10 +21,29 @@ class BaseDB {
 
         return (await data.promise()).Items;
     }
+    /**
+     * 
+     * @param {AWS.DynamoDB.DocumentClient.Key} key takes the structure {HashKey: val}
+     * @returns 
+     */
     async getByKey(key) {
         return BaseDB.dynamoDB.get({
             TableName: this.tableName,
             Key: key
+        }).promise();
+    }
+    /**
+     * 
+     * @param {AWS.DynamoDB.DocumentClient.KeyList} keys takes the structure [{HashKey: val}]
+     * @returns 
+     */
+    async batchGetByKey(keys) {
+        return BaseDB.dynamoDB.batchGet({
+            RequestItems: {
+                [this.tableName]: {
+                    Keys: keys
+                }
+            }
         }).promise();
     }
     async insert(item) {
